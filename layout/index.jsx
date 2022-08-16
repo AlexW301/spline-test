@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>Next JS Starter Template</title>
+        <title>Spline Test</title>
         <meta
           name="description"
           content="This is a quickstart template for a Next JS"
