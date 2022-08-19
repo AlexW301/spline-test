@@ -10,9 +10,10 @@ import Spline from '@splinetool/react-spline';
 
 export default function App() {
   return (
-    <Spline scene="https://prod.spline.design/kB7oCpXxEiqUWkn1/scene.splinecode" />
+    <Spline scene="https://prod.spline.design/tgdTFD7od9cvn6Fy/scene.splinecode" />
   );
 }
+
 
 
 

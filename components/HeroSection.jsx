@@ -5,14 +5,27 @@ import {
   SimpleSlider,
   TextInput,
 } from "./MyUI";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import Scene from "./Scene";
-import Spline from "./Spline";
+// import Spline from "./Spline";
+import Spline from "@splinetool/react-spline";
 
 export default function HeroSection() {
   function toggleDarkMode() {
     document.getElementsByTagName("html")[0].classList.toggle("dark");
+  }
+
+  const cylinder = useRef(null)
+
+  function onLoad(spline) {
+    const obj = spline.findObjectByName('Cylinder');
+    // or
+    // const obj = spline.findObjectById('8E8C2DDD-18B6-4C54-861D-7ED2519DE20E');
+
+    // save it in a ref for later use
+    cylinder.current = obj;
+    console.log(cylinder.current)
   }
   return (
     <div>
@@ -24,7 +37,7 @@ export default function HeroSection() {
           {/* <Canvas style={{height: 700}}>
             <Scene />
           </Canvas> */}
-          <Spline />
+          <Spline onMouseDown={(e) => {if(e.target.name === "Cylinder") {console.log('success!')}}} onLoad={onLoad} scene="https://prod.spline.design/tgdTFD7od9cvn6Fy/scene.splinecode" />
         </div>
       </div>
     </div>

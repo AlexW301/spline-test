@@ -3,111 +3,29 @@
 */
 
 import useSpline from '@splinetool/r3f-spline'
-import { PerspectiveCamera } from '@react-three/drei'
+import { OrthographicCamera } from '@react-three/drei'
 
 export default function Scene({ ...props }) {
-  const { nodes, materials } = useSpline('https://prod.spline.design/kB7oCpXxEiqUWkn1/scene.splinecode')
+  const { nodes, materials } = useSpline('https://prod.spline.design/tgdTFD7od9cvn6Fy/scene.splinecode')
   return (
     <>
-      <color attach="background" args={['#4b4d52']} />
+      <color attach="background" args={['#304975']} />
       <group {...props} dispose={null}>
-        <group name="bed" position={[44.69, 155.93, 0]}>
-          <mesh
-            name="Subdiv 3"
-            geometry={nodes['Subdiv 3'].geometry}
-            material={materials.blanket}
-            castShadow
-            receiveShadow
-            position={[-19.44, 33.26, 154.32]}
-            rotation={[-1.57, 0, 1.57]}
-            scale={[1.85, 2, 2]}
-          />
-          <mesh
-            name="Subdiv 2"
-            geometry={nodes['Subdiv 2'].geometry}
-            material={materials.blanket}
-            castShadow
-            receiveShadow
-            position={[-136.32, 33.26, 154.32]}
-            rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-            scale={[1.85, 2, 2]}
-          />
-          <mesh
-            name="pillow"
-            geometry={nodes.pillow.geometry}
-            material={materials.pillow}
-            castShadow
-            receiveShadow
-            position={[-238.79, -7.54, 164.41]}
-            rotation={[Math.PI, -Math.PI / 2, 0]}
-            scale={[1.98, 1.98, 0.65]}
-          />
-          <mesh
-            name="Subdiv"
-            geometry={nodes.Subdiv.geometry}
-            material={materials['Subdiv Material']}
-            castShadow
-            receiveShadow
-            position={[206.11, 18.46, 164.41]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={[1.98, 0.83, 1.98]}
-          />
-          <mesh
-            name="headboard"
-            geometry={nodes.headboard.geometry}
-            material={materials['headboard Material']}
-            castShadow
-            receiveShadow
-            position={[-303.06, 18.46, 164.41]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={[1.98, 0.83, 1.98]}
-          />
-          <mesh
-            name="basebed"
-            geometry={nodes.basebed.geometry}
-            material={materials.wood}
-            castShadow
-            receiveShadow
-            position={[11.15, -85.09, 164.41]}
-            rotation={[0, Math.PI / 2, 0]}
-            scale={[1.98, 1.12, 1.98]}
-          />
-          <mesh
-            name="matress"
-            geometry={nodes.matress.geometry}
-            material={materials.pillow}
-            castShadow
-            receiveShadow
-            position={[11.15, -40.06, 164.41]}
-            rotation={[0, Math.PI / 2, 0]}
-            scale={[1.86, 1.98, 1.98]}
-          />
-        </group>
-        <PerspectiveCamera
+        <OrthographicCamera
           name="Camera"
           makeDefault={true}
           far={100000}
           near={5}
-          fov={45}
-          position={[110.14, 593.03, -797.61]}
-          rotation={[-2.5, 0.11, 3.06]}
+          position={[-46.38, 267.86, 971.45]}
+          rotation={[-0.24, -0.03, -0.01]}
         />
         <mesh
-          name="Plane"
-          geometry={nodes.Plane.geometry}
-          material={materials['Plane Material']}
+          name="Cylinder"
+          geometry={nodes.Cylinder.geometry}
+          material={materials['Cylinder Material']}
           castShadow
           receiveShadow
-          position={[-2.5, 0.98, 116.57]}
-          rotation={[Math.PI / 2, 0, 0]}
-        />
-        <mesh
-          name="Sphere"
-          geometry={nodes.Sphere.geometry}
-          material={materials['Sphere Material']}
-          castShadow
-          receiveShadow
-          position={[-9.55, 295.99, 11.42]}
+          position={[1, 0, 0]}
         />
         <directionalLight
           name="Directional Light"
