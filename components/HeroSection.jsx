@@ -37,7 +37,8 @@ export default function HeroSection() {
           {/* <Canvas style={{height: 700}}>
             <Scene />
           </Canvas> */}
-          <Spline onMouseDown={(e) => {if(e.target.name === "Cylinder") {console.log('success!')}}} onLoad={onLoad} scene="https://prod.spline.design/tgdTFD7od9cvn6Fy/scene.splinecode" />
+          {/* <Spline onMouseDown={(e) => {if(e.target.name === "Cylinder") {console.log('success!')}}} onLoad={onLoad} scene="https://prod.spline.design/tgdTFD7od9cvn6Fy/scene.splinecode" /> */}
+          <Spline scene="https://prod.spline.design/8qfkr4M6Rh4yj81B/scene.splinecode" />
         </div>
       </div>
     </div>
